@@ -11,6 +11,7 @@
 
 #import "MKHBlocks.h"
 #import "MKHMacros.h"
+#import "MKHDebug.h"
 
 #import "NSObject+MKHGenericHelpers.h"
 

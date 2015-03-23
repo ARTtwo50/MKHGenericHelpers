@@ -46,6 +46,7 @@
 		5014B8841AC06E9500DAD44F /* MKHMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKHMacros.h; sourceTree = "<group>"; };
 		5014B8851AC06E9500DAD44F /* NSObject+MKHGenericHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MKHGenericHelpers.h"; sourceTree = "<group>"; };
 		5014B8861AC06E9500DAD44F /* NSObject+MKHGenericHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MKHGenericHelpers.m"; sourceTree = "<group>"; };
+		5014B8881AC070AA00DAD44F /* MKHDebug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKHDebug.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +133,7 @@
 				5014B8831AC06E9500DAD44F /* MKHGenericHelpers.h */,
 				5014B8821AC06E9500DAD44F /* MKHBlocks.h */,
 				5014B8841AC06E9500DAD44F /* MKHMacros.h */,
+				5014B8881AC070AA00DAD44F /* MKHDebug.h */,
 				5014B8851AC06E9500DAD44F /* NSObject+MKHGenericHelpers.h */,
 				5014B8861AC06E9500DAD44F /* NSObject+MKHGenericHelpers.m */,
 			);
