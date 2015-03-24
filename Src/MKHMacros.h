@@ -81,7 +81,7 @@
 
 #define MKH_bgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 
-#define MKH_runBg(simpleBlock) dispatch_async(bgQueue, simpleBlock)
+#define MKH_runBg(simpleBlock) dispatch_async(MKH_bgQueue, simpleBlock)
 #define MKH_runMain(simpleBlock) dispatch_async(dispatch_get_main_queue(), simpleBlock)
 
 //===
