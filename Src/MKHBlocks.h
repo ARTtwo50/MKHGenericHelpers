@@ -11,4 +11,14 @@
 
 typedef void (^MKHSimpleBlock)(void);
 
+typedef void (^MKHCompletionBlock)(NSError *error);
+
+typedef void (^MKHBoolCompletionBlock)(BOOL successful, NSError *error);
+typedef void (^MKHIdCompletionBlock)(id result, NSError *error);
+typedef void (^MKHObjectCompletionBlock)(NSObject *result, NSError *error);
+typedef void (^MKHNumberCompletionBlock)(NSNumber *result, NSError *error);
+typedef void (^MKHDataCompletionBlock)(NSData *result, NSError *error);
+typedef void (^MKHArrayCompletionBlock)(NSArray *result, NSError *error);
+typedef void (^MKHDictionaryCompletionBlock)(NSDictionary *result, NSError *error);
+
 #endif
