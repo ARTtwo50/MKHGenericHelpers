@@ -45,7 +45,7 @@
 
 #pragma mark - Custom
 
-+ (id)objectWithProperties:(NSDictionary *)properties
++ (instancetype)objectWithProperties:(NSDictionary *)properties
 {
     id result = nil;
     
@@ -91,19 +91,9 @@
     // any kind of initial configuration should be done here
 }
 
-- (void)reConfigure
-{
-    // update here only what may be changed...
-}
-
 - (void)applyItem:(id)item
 {
     // any item selection events should be processed here
-}
-
-- (void)syncWithData
-{
-    // any data model related updates shuld be done here
 }
 
 - (NSString *)stringValueForKey:(NSString *)key
@@ -199,13 +189,6 @@
 + (BOOL)isClassOfObject:(id)objectToCheck
 {
     return MKH_isClassOfObject([self class], objectToCheck);
-}
-
-+ (UINib *)nibFromClassName
-{
-    return [UINib
-            nibWithNibName:NSStringFromClass(self)
-            bundle:nil];
 }
 
 @end

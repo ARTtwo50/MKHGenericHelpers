@@ -14,5 +14,11 @@
 #import "MKHDebug.h"
 
 #import "NSObject+MKHGenericHelpers.h"
+#import "NSArray+MKHGenericHelpers.h"
+#import "NSMutableArray+MKHGenericHelpers.h"
+#import "NSMutableDictionary+MKHGenericHelpers.h"
+#import "NSString+MKHGenericHelpers.h"
+
+#import "MKHMutableArray.h"
 
 #endif

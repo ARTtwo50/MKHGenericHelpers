@@ -14,7 +14,24 @@
 		5014B8691AC06E6200DAD44F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5014B8681AC06E6200DAD44F /* Images.xcassets */; };
 		5014B86C1AC06E6200DAD44F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5014B86A1AC06E6200DAD44F /* LaunchScreen.xib */; };
 		5014B8781AC06E6200DAD44F /* MKHGenericHelpersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5014B8771AC06E6200DAD44F /* MKHGenericHelpersTests.m */; };
-		5014B8871AC06E9500DAD44F /* NSObject+MKHGenericHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5014B8861AC06E9500DAD44F /* NSObject+MKHGenericHelpers.m */; };
+		501CCCF71ACDFC3C00E3B11C /* NSArray+MKHGenericHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 501CCCCB1ACDFC3C00E3B11C /* NSArray+MKHGenericHelpers.m */; };
+		501CCCF81ACDFC3C00E3B11C /* NSMutableArray+MKHGenericHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 501CCCCD1ACDFC3C00E3B11C /* NSMutableArray+MKHGenericHelpers.m */; };
+		501CCCF91ACDFC3C00E3B11C /* NSMutableDictionary+MKHGenericHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 501CCCCF1ACDFC3C00E3B11C /* NSMutableDictionary+MKHGenericHelpers.m */; };
+		501CCCFA1ACDFC3C00E3B11C /* NSObject+MKHDynamicMaps.m in Sources */ = {isa = PBXBuildFile; fileRef = 501CCCD11ACDFC3C00E3B11C /* NSObject+MKHDynamicMaps.m */; };
+		501CCCFB1ACDFC3C00E3B11C /* NSObject+MKHGenericHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 501CCCD31ACDFC3C00E3B11C /* NSObject+MKHGenericHelpers.m */; };
+		501CCCFC1ACDFC3C00E3B11C /* NSString+MKHGenericHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 501CCCD51ACDFC3C00E3B11C /* NSString+MKHGenericHelpers.m */; };
+		501CCCFD1ACDFC3C00E3B11C /* MKHArrayItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 501CCCD81ACDFC3C00E3B11C /* MKHArrayItemWrapper.m */; };
+		501CCCFE1ACDFC3C00E3B11C /* MKHMutableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 501CCCDA1ACDFC3C00E3B11C /* MKHMutableArray.m */; };
+		501CCCFF1ACDFC3C00E3B11C /* UIColor+MKHGenericHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 501CCCE21ACDFC3C00E3B11C /* UIColor+MKHGenericHelpers.m */; };
+		501CCD001ACDFC3C00E3B11C /* UIImage+MKHGenericHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 501CCCE41ACDFC3C00E3B11C /* UIImage+MKHGenericHelpers.m */; };
+		501CCD011ACDFC3C00E3B11C /* UIImageView+MKHGenericHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 501CCCE61ACDFC3C00E3B11C /* UIImageView+MKHGenericHelpers.m */; };
+		501CCD021ACDFC3C00E3B11C /* UINavigationController+MKHGenericHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 501CCCE81ACDFC3C00E3B11C /* UINavigationController+MKHGenericHelpers.m */; };
+		501CCD031ACDFC3C00E3B11C /* UINib+MKHGenericHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 501CCCEA1ACDFC3C00E3B11C /* UINib+MKHGenericHelpers.m */; };
+		501CCD041ACDFC3C00E3B11C /* UIResponder+MKHGenericHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 501CCCEC1ACDFC3C00E3B11C /* UIResponder+MKHGenericHelpers.m */; };
+		501CCD051ACDFC3C00E3B11C /* UIView+MKHGenericHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 501CCCEE1ACDFC3C00E3B11C /* UIView+MKHGenericHelpers.m */; };
+		501CCD061ACDFC3C00E3B11C /* UIViewController+MKHGenericHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 501CCCF01ACDFC3C00E3B11C /* UIViewController+MKHGenericHelpers.m */; };
+		501CCD071ACDFC3C00E3B11C /* MKHPassthroughView.m in Sources */ = {isa = PBXBuildFile; fileRef = 501CCCF31ACDFC3C00E3B11C /* MKHPassthroughView.m */; };
+		501CCD081ACDFC3C00E3B11C /* MKHCollectionCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 501CCCF51ACDFC3C00E3B11C /* MKHCollectionCtrl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,12 +58,47 @@
 		5014B8711AC06E6200DAD44F /* MKHGenericHelpersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MKHGenericHelpersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5014B8761AC06E6200DAD44F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5014B8771AC06E6200DAD44F /* MKHGenericHelpersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKHGenericHelpersTests.m; sourceTree = "<group>"; };
-		5014B8821AC06E9500DAD44F /* MKHBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKHBlocks.h; sourceTree = "<group>"; };
-		5014B8831AC06E9500DAD44F /* MKHGenericHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKHGenericHelpers.h; sourceTree = "<group>"; };
-		5014B8841AC06E9500DAD44F /* MKHMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKHMacros.h; sourceTree = "<group>"; };
-		5014B8851AC06E9500DAD44F /* NSObject+MKHGenericHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MKHGenericHelpers.h"; sourceTree = "<group>"; };
-		5014B8861AC06E9500DAD44F /* NSObject+MKHGenericHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MKHGenericHelpers.m"; sourceTree = "<group>"; };
-		5014B8881AC070AA00DAD44F /* MKHDebug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKHDebug.h; sourceTree = "<group>"; };
+		501CCCCA1ACDFC3C00E3B11C /* NSArray+MKHGenericHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MKHGenericHelpers.h"; sourceTree = "<group>"; };
+		501CCCCB1ACDFC3C00E3B11C /* NSArray+MKHGenericHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MKHGenericHelpers.m"; sourceTree = "<group>"; };
+		501CCCCC1ACDFC3C00E3B11C /* NSMutableArray+MKHGenericHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+MKHGenericHelpers.h"; sourceTree = "<group>"; };
+		501CCCCD1ACDFC3C00E3B11C /* NSMutableArray+MKHGenericHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+MKHGenericHelpers.m"; sourceTree = "<group>"; };
+		501CCCCE1ACDFC3C00E3B11C /* NSMutableDictionary+MKHGenericHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+MKHGenericHelpers.h"; sourceTree = "<group>"; };
+		501CCCCF1ACDFC3C00E3B11C /* NSMutableDictionary+MKHGenericHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+MKHGenericHelpers.m"; sourceTree = "<group>"; };
+		501CCCD01ACDFC3C00E3B11C /* NSObject+MKHDynamicMaps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MKHDynamicMaps.h"; sourceTree = "<group>"; };
+		501CCCD11ACDFC3C00E3B11C /* NSObject+MKHDynamicMaps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MKHDynamicMaps.m"; sourceTree = "<group>"; };
+		501CCCD21ACDFC3C00E3B11C /* NSObject+MKHGenericHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MKHGenericHelpers.h"; sourceTree = "<group>"; };
+		501CCCD31ACDFC3C00E3B11C /* NSObject+MKHGenericHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MKHGenericHelpers.m"; sourceTree = "<group>"; };
+		501CCCD41ACDFC3C00E3B11C /* NSString+MKHGenericHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MKHGenericHelpers.h"; sourceTree = "<group>"; };
+		501CCCD51ACDFC3C00E3B11C /* NSString+MKHGenericHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MKHGenericHelpers.m"; sourceTree = "<group>"; };
+		501CCCD71ACDFC3C00E3B11C /* MKHArrayItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKHArrayItemWrapper.h; sourceTree = "<group>"; };
+		501CCCD81ACDFC3C00E3B11C /* MKHArrayItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKHArrayItemWrapper.m; sourceTree = "<group>"; };
+		501CCCD91ACDFC3C00E3B11C /* MKHMutableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKHMutableArray.h; sourceTree = "<group>"; };
+		501CCCDA1ACDFC3C00E3B11C /* MKHMutableArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKHMutableArray.m; sourceTree = "<group>"; };
+		501CCCDB1ACDFC3C00E3B11C /* MKHBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKHBlocks.h; sourceTree = "<group>"; };
+		501CCCDC1ACDFC3C00E3B11C /* MKHDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKHDebug.h; sourceTree = "<group>"; };
+		501CCCDD1ACDFC3C00E3B11C /* MKHGenericHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKHGenericHelpers.h; sourceTree = "<group>"; };
+		501CCCDE1ACDFC3C00E3B11C /* MKHMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKHMacros.h; sourceTree = "<group>"; };
+		501CCCE11ACDFC3C00E3B11C /* UIColor+MKHGenericHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MKHGenericHelpers.h"; sourceTree = "<group>"; };
+		501CCCE21ACDFC3C00E3B11C /* UIColor+MKHGenericHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MKHGenericHelpers.m"; sourceTree = "<group>"; };
+		501CCCE31ACDFC3C00E3B11C /* UIImage+MKHGenericHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MKHGenericHelpers.h"; sourceTree = "<group>"; };
+		501CCCE41ACDFC3C00E3B11C /* UIImage+MKHGenericHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MKHGenericHelpers.m"; sourceTree = "<group>"; };
+		501CCCE51ACDFC3C00E3B11C /* UIImageView+MKHGenericHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+MKHGenericHelpers.h"; sourceTree = "<group>"; };
+		501CCCE61ACDFC3C00E3B11C /* UIImageView+MKHGenericHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+MKHGenericHelpers.m"; sourceTree = "<group>"; };
+		501CCCE71ACDFC3C00E3B11C /* UINavigationController+MKHGenericHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+MKHGenericHelpers.h"; sourceTree = "<group>"; };
+		501CCCE81ACDFC3C00E3B11C /* UINavigationController+MKHGenericHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+MKHGenericHelpers.m"; sourceTree = "<group>"; };
+		501CCCE91ACDFC3C00E3B11C /* UINib+MKHGenericHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINib+MKHGenericHelpers.h"; sourceTree = "<group>"; };
+		501CCCEA1ACDFC3C00E3B11C /* UINib+MKHGenericHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINib+MKHGenericHelpers.m"; sourceTree = "<group>"; };
+		501CCCEB1ACDFC3C00E3B11C /* UIResponder+MKHGenericHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+MKHGenericHelpers.h"; sourceTree = "<group>"; };
+		501CCCEC1ACDFC3C00E3B11C /* UIResponder+MKHGenericHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+MKHGenericHelpers.m"; sourceTree = "<group>"; };
+		501CCCED1ACDFC3C00E3B11C /* UIView+MKHGenericHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MKHGenericHelpers.h"; sourceTree = "<group>"; };
+		501CCCEE1ACDFC3C00E3B11C /* UIView+MKHGenericHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MKHGenericHelpers.m"; sourceTree = "<group>"; };
+		501CCCEF1ACDFC3C00E3B11C /* UIViewController+MKHGenericHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MKHGenericHelpers.h"; sourceTree = "<group>"; };
+		501CCCF01ACDFC3C00E3B11C /* UIViewController+MKHGenericHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MKHGenericHelpers.m"; sourceTree = "<group>"; };
+		501CCCF21ACDFC3C00E3B11C /* MKHPassthroughView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKHPassthroughView.h; sourceTree = "<group>"; };
+		501CCCF31ACDFC3C00E3B11C /* MKHPassthroughView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKHPassthroughView.m; sourceTree = "<group>"; };
+		501CCCF41ACDFC3C00E3B11C /* MKHCollectionCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKHCollectionCtrl.h; sourceTree = "<group>"; };
+		501CCCF51ACDFC3C00E3B11C /* MKHCollectionCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKHCollectionCtrl.m; sourceTree = "<group>"; };
+		501CCCF61ACDFC3C00E3B11C /* MKHGenericUIHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKHGenericUIHelpers.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,15 +182,98 @@
 		5014B8811AC06E9500DAD44F /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				5014B8831AC06E9500DAD44F /* MKHGenericHelpers.h */,
-				5014B8821AC06E9500DAD44F /* MKHBlocks.h */,
-				5014B8841AC06E9500DAD44F /* MKHMacros.h */,
-				5014B8881AC070AA00DAD44F /* MKHDebug.h */,
-				5014B8851AC06E9500DAD44F /* NSObject+MKHGenericHelpers.h */,
-				5014B8861AC06E9500DAD44F /* NSObject+MKHGenericHelpers.m */,
+				501CCCC81ACDFC3C00E3B11C /* Foundation */,
+				501CCCDF1ACDFC3C00E3B11C /* UIKit */,
 			);
 			name = Lib;
 			path = ../Src;
+			sourceTree = "<group>";
+		};
+		501CCCC81ACDFC3C00E3B11C /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				501CCCDD1ACDFC3C00E3B11C /* MKHGenericHelpers.h */,
+				501CCCDB1ACDFC3C00E3B11C /* MKHBlocks.h */,
+				501CCCDC1ACDFC3C00E3B11C /* MKHDebug.h */,
+				501CCCDE1ACDFC3C00E3B11C /* MKHMacros.h */,
+				501CCCC91ACDFC3C00E3B11C /* Categories */,
+				501CCCD61ACDFC3C00E3B11C /* Classes */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		501CCCC91ACDFC3C00E3B11C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				501CCCCA1ACDFC3C00E3B11C /* NSArray+MKHGenericHelpers.h */,
+				501CCCCB1ACDFC3C00E3B11C /* NSArray+MKHGenericHelpers.m */,
+				501CCCCC1ACDFC3C00E3B11C /* NSMutableArray+MKHGenericHelpers.h */,
+				501CCCCD1ACDFC3C00E3B11C /* NSMutableArray+MKHGenericHelpers.m */,
+				501CCCCE1ACDFC3C00E3B11C /* NSMutableDictionary+MKHGenericHelpers.h */,
+				501CCCCF1ACDFC3C00E3B11C /* NSMutableDictionary+MKHGenericHelpers.m */,
+				501CCCD01ACDFC3C00E3B11C /* NSObject+MKHDynamicMaps.h */,
+				501CCCD11ACDFC3C00E3B11C /* NSObject+MKHDynamicMaps.m */,
+				501CCCD21ACDFC3C00E3B11C /* NSObject+MKHGenericHelpers.h */,
+				501CCCD31ACDFC3C00E3B11C /* NSObject+MKHGenericHelpers.m */,
+				501CCCD41ACDFC3C00E3B11C /* NSString+MKHGenericHelpers.h */,
+				501CCCD51ACDFC3C00E3B11C /* NSString+MKHGenericHelpers.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		501CCCD61ACDFC3C00E3B11C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				501CCCD71ACDFC3C00E3B11C /* MKHArrayItemWrapper.h */,
+				501CCCD81ACDFC3C00E3B11C /* MKHArrayItemWrapper.m */,
+				501CCCD91ACDFC3C00E3B11C /* MKHMutableArray.h */,
+				501CCCDA1ACDFC3C00E3B11C /* MKHMutableArray.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		501CCCDF1ACDFC3C00E3B11C /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				501CCCF61ACDFC3C00E3B11C /* MKHGenericUIHelpers.h */,
+				501CCCE01ACDFC3C00E3B11C /* Categories */,
+				501CCCF11ACDFC3C00E3B11C /* Classes */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		501CCCE01ACDFC3C00E3B11C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				501CCCE11ACDFC3C00E3B11C /* UIColor+MKHGenericHelpers.h */,
+				501CCCE21ACDFC3C00E3B11C /* UIColor+MKHGenericHelpers.m */,
+				501CCCE31ACDFC3C00E3B11C /* UIImage+MKHGenericHelpers.h */,
+				501CCCE41ACDFC3C00E3B11C /* UIImage+MKHGenericHelpers.m */,
+				501CCCE51ACDFC3C00E3B11C /* UIImageView+MKHGenericHelpers.h */,
+				501CCCE61ACDFC3C00E3B11C /* UIImageView+MKHGenericHelpers.m */,
+				501CCCE71ACDFC3C00E3B11C /* UINavigationController+MKHGenericHelpers.h */,
+				501CCCE81ACDFC3C00E3B11C /* UINavigationController+MKHGenericHelpers.m */,
+				501CCCE91ACDFC3C00E3B11C /* UINib+MKHGenericHelpers.h */,
+				501CCCEA1ACDFC3C00E3B11C /* UINib+MKHGenericHelpers.m */,
+				501CCCEB1ACDFC3C00E3B11C /* UIResponder+MKHGenericHelpers.h */,
+				501CCCEC1ACDFC3C00E3B11C /* UIResponder+MKHGenericHelpers.m */,
+				501CCCED1ACDFC3C00E3B11C /* UIView+MKHGenericHelpers.h */,
+				501CCCEE1ACDFC3C00E3B11C /* UIView+MKHGenericHelpers.m */,
+				501CCCEF1ACDFC3C00E3B11C /* UIViewController+MKHGenericHelpers.h */,
+				501CCCF01ACDFC3C00E3B11C /* UIViewController+MKHGenericHelpers.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		501CCCF11ACDFC3C00E3B11C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				501CCCF21ACDFC3C00E3B11C /* MKHPassthroughView.h */,
+				501CCCF31ACDFC3C00E3B11C /* MKHPassthroughView.m */,
+				501CCCF41ACDFC3C00E3B11C /* MKHCollectionCtrl.h */,
+				501CCCF51ACDFC3C00E3B11C /* MKHCollectionCtrl.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,10 +376,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				501CCD041ACDFC3C00E3B11C /* UIResponder+MKHGenericHelpers.m in Sources */,
+				501CCD001ACDFC3C00E3B11C /* UIImage+MKHGenericHelpers.m in Sources */,
+				501CCCFE1ACDFC3C00E3B11C /* MKHMutableArray.m in Sources */,
+				501CCCF91ACDFC3C00E3B11C /* NSMutableDictionary+MKHGenericHelpers.m in Sources */,
+				501CCCFF1ACDFC3C00E3B11C /* UIColor+MKHGenericHelpers.m in Sources */,
+				501CCCFA1ACDFC3C00E3B11C /* NSObject+MKHDynamicMaps.m in Sources */,
+				501CCCFB1ACDFC3C00E3B11C /* NSObject+MKHGenericHelpers.m in Sources */,
+				501CCD031ACDFC3C00E3B11C /* UINib+MKHGenericHelpers.m in Sources */,
+				501CCD021ACDFC3C00E3B11C /* UINavigationController+MKHGenericHelpers.m in Sources */,
 				5014B8641AC06E6200DAD44F /* ViewController.m in Sources */,
+				501CCCF71ACDFC3C00E3B11C /* NSArray+MKHGenericHelpers.m in Sources */,
+				501CCD051ACDFC3C00E3B11C /* UIView+MKHGenericHelpers.m in Sources */,
+				501CCCFD1ACDFC3C00E3B11C /* MKHArrayItemWrapper.m in Sources */,
+				501CCD011ACDFC3C00E3B11C /* UIImageView+MKHGenericHelpers.m in Sources */,
+				501CCD071ACDFC3C00E3B11C /* MKHPassthroughView.m in Sources */,
+				501CCD061ACDFC3C00E3B11C /* UIViewController+MKHGenericHelpers.m in Sources */,
+				501CCCF81ACDFC3C00E3B11C /* NSMutableArray+MKHGenericHelpers.m in Sources */,
 				5014B8611AC06E6200DAD44F /* AppDelegate.m in Sources */,
-				5014B8871AC06E9500DAD44F /* NSObject+MKHGenericHelpers.m in Sources */,
 				5014B85E1AC06E6200DAD44F /* main.m in Sources */,
+				501CCD081ACDFC3C00E3B11C /* MKHCollectionCtrl.m in Sources */,
+				501CCCFC1ACDFC3C00E3B11C /* NSString+MKHGenericHelpers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

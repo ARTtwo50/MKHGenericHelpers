@@ -7,25 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 
 @interface NSObject (MKHGenericHelpers)
 
 @property (readonly, nonatomic) NSArray *allPropertyNames;
 
-+ (id)objectWithProperties:(NSDictionary *)properties;
++ (instancetype)objectWithProperties:(NSDictionary *)properties;
 - (void)configureWithProperties:(NSDictionary *)properties;
 
 + (instancetype)newWithObject:(id)object;
 
 - (void)configureWithObject:(id)object; // initial/base instance configuration
-- (void)reConfigure;
-
 - (void)applyItem:(id)item; // it means this item has been selected, has been made "current"
-
-// it is supposed to be used to apply any data model changes
-// to receiver, usually it is for updating UI inside UIViewController or UIView
-- (void)syncWithData;
 
 - (NSString *)stringValueForKey:(NSString *)key;
 
@@ -36,6 +29,5 @@
 - (NSString *)stringFromDateForKey:(NSString *)dateKey withFormat:(NSString *)format;
 
 + (BOOL)isClassOfObject:(id)objectToCheck;
-+ (UINib *)nibFromClassName;
 
 @end
