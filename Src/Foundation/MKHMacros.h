@@ -11,6 +11,10 @@
 
 //===
 
+#define MKHLog(message, error) NSLog(@"%@: %@", message, error)
+
+//===
+
 // http://stackoverflow.com/questions/3339722/check-iphone-ios-version
 #define MKH_SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
 #define MKH_SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
