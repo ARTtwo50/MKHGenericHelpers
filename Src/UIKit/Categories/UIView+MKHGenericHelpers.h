@@ -94,4 +94,6 @@ typedef void (^AnimationCompletionBlock)(BOOL finished);
 - (void)applyFontWithName:(NSString *)fontName andSize:(CGFloat)fontSize;
 - (void)applyFontWithName:(NSString *)fontName;
 
++ (UINib *)nibFromClassName;
+
 @end

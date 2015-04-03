@@ -703,4 +703,11 @@ UIViewAnimationOptions defaultAnimationOptions = UIViewAnimationOptionCurveEaseI
     [self applyFontWithName:fontName andSize:0.0];
 }
 
++ (UINib *)nibFromClassName
+{
+    return [UINib
+            nibWithNibName:NSStringFromClass(self)
+            bundle:nil];
+}
+
 @end
