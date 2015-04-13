@@ -236,6 +236,56 @@ UIViewAnimationOptions defaultAnimationOptions = UIViewAnimationOptionCurveEaseI
     }
 }
 
+- (void)setCenterX:(CGFloat)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock
+{
+    MKHSimpleBlock executionBlock = ^{
+        
+        self.center = CGPointMake(newValue, self.center.y);
+    };
+    
+    if (animated)
+    {
+        [UIView
+         animateWithDuration:defaultAnimationDuration
+         delay:0.0
+         options:UIViewAnimationOptionCurveEaseInOut
+         animations:^{
+             
+             executionBlock();
+         }
+         completion:completionBlock];
+    }
+    else
+    {
+        executionBlock();
+    }
+}
+
+- (void)setCenterY:(CGFloat)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock
+{
+    MKHSimpleBlock executionBlock = ^{
+        
+        self.center = CGPointMake(self.center.x, newValue);
+    };
+    
+    if (animated)
+    {
+        [UIView
+         animateWithDuration:defaultAnimationDuration
+         delay:0.0
+         options:UIViewAnimationOptionCurveEaseInOut
+         animations:^{
+             
+             executionBlock();
+         }
+         completion:completionBlock];
+    }
+    else
+    {
+        executionBlock();
+    }
+}
+
 - (void)setCenter:(CGPoint)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock
 {
     MKHSimpleBlock executionBlock = ^{
@@ -374,6 +424,16 @@ UIViewAnimationOptions defaultAnimationOptions = UIViewAnimationOptionCurveEaseI
 - (void)setOrigin:(CGPoint)newValue animated:(BOOL)animated
 {
     [self setOrigin:newValue animated:animated withCompletion:nil];
+}
+
+- (void)setCenterX:(CGFloat)newValue animated:(BOOL)animated
+{
+    [self setCenterX:newValue animated:animated withCompletion:nil];
+}
+
+- (void)setCenterY:(CGFloat)newValue animated:(BOOL)animated
+{
+    [self setCenterY:newValue animated:animated withCompletion:nil];
 }
 
 - (void)setCenter:(CGPoint)newValue animated:(BOOL)animated
