@@ -15,6 +15,7 @@
 #import "UINavigationController+MKHGenericHelpers.h"
 #import "UIResponder+MKHGenericHelpers.h"
 #import "UIView+MKHGenericHelpers.h"
+#import "UIScrollView+MKHGenericHelpers.h"
 #import "UIViewController+MKHGenericHelpers.h"
 
 #import "MKHPassthroughView.h"
