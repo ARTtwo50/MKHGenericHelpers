@@ -32,6 +32,7 @@
 		501CCD061ACDFC3C00E3B11C /* UIViewController+MKHGenericHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 501CCCF01ACDFC3C00E3B11C /* UIViewController+MKHGenericHelpers.m */; };
 		501CCD071ACDFC3C00E3B11C /* MKHPassthroughView.m in Sources */ = {isa = PBXBuildFile; fileRef = 501CCCF31ACDFC3C00E3B11C /* MKHPassthroughView.m */; };
 		501CCD081ACDFC3C00E3B11C /* MKHCollectionCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 501CCCF51ACDFC3C00E3B11C /* MKHCollectionCtrl.m */; };
+		501FD4731ADC231D00FB5507 /* UIScrollView+MKHGenericHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 501FD4721ADC231D00FB5507 /* UIScrollView+MKHGenericHelpers.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,8 @@
 		501CCCF41ACDFC3C00E3B11C /* MKHCollectionCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKHCollectionCtrl.h; sourceTree = "<group>"; };
 		501CCCF51ACDFC3C00E3B11C /* MKHCollectionCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKHCollectionCtrl.m; sourceTree = "<group>"; };
 		501CCCF61ACDFC3C00E3B11C /* MKHGenericUIHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKHGenericUIHelpers.h; sourceTree = "<group>"; };
+		501FD4711ADC231D00FB5507 /* UIScrollView+MKHGenericHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MKHGenericHelpers.h"; sourceTree = "<group>"; };
+		501FD4721ADC231D00FB5507 /* UIScrollView+MKHGenericHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MKHGenericHelpers.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +262,8 @@
 				501CCCEC1ACDFC3C00E3B11C /* UIResponder+MKHGenericHelpers.m */,
 				501CCCED1ACDFC3C00E3B11C /* UIView+MKHGenericHelpers.h */,
 				501CCCEE1ACDFC3C00E3B11C /* UIView+MKHGenericHelpers.m */,
+				501FD4711ADC231D00FB5507 /* UIScrollView+MKHGenericHelpers.h */,
+				501FD4721ADC231D00FB5507 /* UIScrollView+MKHGenericHelpers.m */,
 				501CCCEF1ACDFC3C00E3B11C /* UIViewController+MKHGenericHelpers.h */,
 				501CCCF01ACDFC3C00E3B11C /* UIViewController+MKHGenericHelpers.m */,
 			);
@@ -396,6 +401,7 @@
 				5014B8611AC06E6200DAD44F /* AppDelegate.m in Sources */,
 				5014B85E1AC06E6200DAD44F /* main.m in Sources */,
 				501CCD081ACDFC3C00E3B11C /* MKHCollectionCtrl.m in Sources */,
+				501FD4731ADC231D00FB5507 /* UIScrollView+MKHGenericHelpers.m in Sources */,
 				501CCCFC1ACDFC3C00E3B11C /* NSString+MKHGenericHelpers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
