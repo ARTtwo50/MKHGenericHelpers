@@ -236,6 +236,31 @@ UIViewAnimationOptions defaultAnimationOptions = UIViewAnimationOptionCurveEaseI
     }
 }
 
+- (void)setCenter:(CGPoint)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock
+{
+    MKHSimpleBlock executionBlock = ^{
+        
+        self.center = newValue;
+    };
+    
+    if (animated)
+    {
+        [UIView
+         animateWithDuration:defaultAnimationDuration
+         delay:0.0
+         options:UIViewAnimationOptionCurveEaseInOut
+         animations:^{
+             
+             executionBlock();
+         }
+         completion:completionBlock];
+    }
+    else
+    {
+        executionBlock();
+    }
+}
+
 - (void)setWidth:(CGFloat)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock
 {
     MKHSimpleBlock executionBlock = ^{
@@ -349,6 +374,11 @@ UIViewAnimationOptions defaultAnimationOptions = UIViewAnimationOptionCurveEaseI
 - (void)setOrigin:(CGPoint)newValue animated:(BOOL)animated
 {
     [self setOrigin:newValue animated:animated withCompletion:nil];
+}
+
+- (void)setCenter:(CGPoint)newValue animated:(BOOL)animated
+{
+    [self setCenter:newValue animated:animated withCompletion:nil];
 }
 
 - (void)setWidth:(CGFloat)newValue animated:(BOOL)animated
