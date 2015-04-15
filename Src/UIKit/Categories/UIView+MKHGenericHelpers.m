@@ -11,6 +11,7 @@
 //===
 
 #import "MKHBlocks.h"
+#import "NSObject+MKHGenericHelpers.h"
 
 //===
 
@@ -798,6 +799,35 @@ UIViewAnimationOptions defaultAnimationOptions = UIViewAnimationOptionCurveEaseI
     return [UINib
             nibWithNibName:NSStringFromClass(self)
             bundle:nil];
+}
+
+- (CAGradientLayer *)addGradientLayerWithColors:(NSArray *)colorList
+{
+    CAGradientLayer *result = [CAGradientLayer new];
+    
+    //===
+    
+    NSMutableArray *cgColorList = [NSMutableArray array];
+    
+    for (UIColor *color in colorList)
+    {
+        if ([UIColor isClassOfObject:color])
+        {
+            [cgColorList addObject:(id)color.CGColor];
+        }
+    }
+    
+    //===
+    
+    UIView *gradientLayerView = self;
+    
+    result.frame = gradientLayerView.bounds;
+    result.colors = cgColorList;
+    [gradientLayerView.layer insertSublayer:result atIndex:0];
+    
+    //===
+    
+    return result;
 }
 
 @end
