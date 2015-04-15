@@ -95,4 +95,6 @@ typedef void (^AnimationCompletionBlock)(BOOL finished);
 
 + (UINib *)nibFromClassName;
 
+- (CAGradientLayer *)addGradientLayerWithColors:(NSArray *)colorList;
+
 @end
