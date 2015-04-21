@@ -803,6 +803,10 @@ UIViewAnimationOptions defaultAnimationOptions = UIViewAnimationOptionCurveEaseI
 
 - (CAGradientLayer *)addGradientLayerWithColors:(NSArray *)colorList
 {
+    // http://stackoverflow.com/a/21212764
+    
+    //===
+    
     CAGradientLayer *result = [CAGradientLayer new];
     
     //===

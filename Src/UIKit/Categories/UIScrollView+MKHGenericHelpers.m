@@ -19,12 +19,34 @@
 
 - (NSUInteger)currentHorizontalPageNumber
 {
-    return (NSUInteger)(floor(self.contentOffset.x/self.frame.size.width));
+    NSInteger result = (NSInteger)(floor(self.contentOffset.x/self.frame.size.width));
+    
+    //===
+    
+    if (result < 0)
+    {
+        result = 0;
+    }
+    
+    //===
+    
+    return (NSUInteger)result;
 }
 
 - (NSUInteger)currentVerticalPageNumber
 {
-    return (NSUInteger)(floor(self.contentOffset.y/self.frame.size.height));
+    NSInteger result = (NSInteger)(floor(self.contentOffset.y/self.frame.size.height));
+    
+    //===
+    
+    if (result < 0)
+    {
+        result = 0;
+    }
+    
+    //===
+    
+    return (NSUInteger)result;
 }
 
 #pragma mark - Custom
