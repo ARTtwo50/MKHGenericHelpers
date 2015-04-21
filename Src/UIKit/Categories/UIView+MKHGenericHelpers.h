@@ -29,6 +29,8 @@ typedef void (^AnimationCompletionBlock)(BOOL finished);
 @property CGFloat height;
 @property CGFloat width;
 @property CGSize size;
+@property CGFloat centerX;
+@property CGFloat centerY;
 
 - (void)setOriginX:(CGFloat)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock;
 - (void)setOriginY:(CGFloat)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock;

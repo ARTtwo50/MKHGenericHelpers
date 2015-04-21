@@ -160,6 +160,26 @@ UIViewAnimationOptions defaultAnimationOptions = UIViewAnimationOptionCurveEaseI
     }
 }
 
+- (CGFloat)centerX
+{
+    return self.center.x;
+}
+
+- (void)setCenterX:(CGFloat)newValue
+{
+    self.center = CGPointMake(newValue, self.center.y);
+}
+
+- (CGFloat)centerY
+{
+    return self.center.y;
+}
+
+- (void)setCenterY:(CGFloat)newValue
+{
+    self.center = CGPointMake(self.center.x, newValue);
+}
+
 #pragma mark - Helpers
 
 - (void)setOriginX:(CGFloat)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock
