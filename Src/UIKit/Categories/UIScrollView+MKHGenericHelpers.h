@@ -11,11 +11,11 @@
 //===
 
 typedef void (^MKHGHUISVOnDidChangeHorizontalPage)(UIScrollView* scrollView,
-                                                   NSInteger previousValue,
-                                                   NSInteger newValue);
+                                                   NSUInteger previousValue,
+                                                   NSUInteger newValue);
 typedef void (^MKHGHUISVOnDidChangeVerticalPage)(UIScrollView* scrollView,
-                                                 NSInteger previousValue,
-                                                 NSInteger newValue);
+                                                 NSUInteger previousValue,
+                                                 NSUInteger newValue);
 
 //===
 
