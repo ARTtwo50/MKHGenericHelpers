@@ -49,6 +49,75 @@
     return (NSUInteger)result;
 }
 
+- (BOOL)isBouncing
+{
+    return self.isBouncingHorizontally || self.isBouncingVertically;
+}
+
+- (BOOL)isBouncingHorizontally
+{
+    return (self.isBouncingLeftEdge || self.isBouncingRightEdge);
+}
+
+- (BOOL)isBouncingLeftEdge
+{
+    //Pulling right
+    
+    //===
+    
+    CGFloat offsetX = self.contentOffset.x;
+    
+    //===
+    
+    return (offsetX < 0);
+}
+
+- (BOOL)isBouncingRightEdge
+{
+    //Pulling left
+    
+    //===
+    
+    CGFloat offsetX = self.contentOffset.x;
+    CGFloat maxOffsetX = self.contentSize.width - self.frame.size.width;
+    
+    //===
+    
+    return (offsetX > maxOffsetX);
+}
+
+- (BOOL)isBouncingVertically
+{
+    return (self.isBouncingTopEdge || self.isBouncingBottomEdge);
+}
+
+- (BOOL)isBouncingTopEdge
+{
+    //Pulling down
+    
+    //===
+    
+    CGFloat offsetY = self.contentOffset.y;
+    
+    //===
+    
+    return (offsetY < 0);
+}
+
+- (BOOL)isBouncingBottomEdge
+{
+    //Pulling up
+    
+    //===
+    
+    CGFloat offsetY = self.contentOffset.y;
+    CGFloat maxOffsetY = self.contentSize.height - self.frame.size.height;
+    
+    //===
+    
+    return (offsetY > maxOffsetY);
+}
+
 #pragma mark - Custom
 
 - (CGSize)defaultContentSizeWithMargins:(CGPoint)margins

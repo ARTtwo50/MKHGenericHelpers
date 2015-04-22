@@ -12,6 +12,13 @@
 
 @property (readonly) NSUInteger currentHorizontalPageNumber;
 @property (readonly) NSUInteger currentVerticalPageNumber;
+@property (readonly) BOOL isBouncing;
+@property (readonly) BOOL isBouncingHorizontally;
+@property (readonly) BOOL isBouncingLeftEdge;
+@property (readonly) BOOL isBouncingRightEdge;
+@property (readonly) BOOL isBouncingVertically;
+@property (readonly) BOOL isBouncingTopEdge;
+@property (readonly) BOOL isBouncingBottomEdge;
 
 - (CGSize)defaultContentSizeWithMargins:(CGPoint)margins;
 - (void)resetInsets;
