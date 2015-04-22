@@ -8,10 +8,25 @@
 
 #import <UIKit/UIKit.h>
 
+//===
+
+typedef void (^MKHGHUISVOnDidChangeHorizontalPage)(UIScrollView* scrollView,
+                                                   NSInteger previousValue,
+                                                   NSInteger newValue);
+typedef void (^MKHGHUISVOnDidChangeVerticalPage)(UIScrollView* scrollView,
+                                                 NSInteger previousValue,
+                                                 NSInteger newValue);
+
+//===
+
 @interface UIScrollView (MKHGenericHelpers)
 
-@property (readonly) NSUInteger currentHorizontalPageNumber;
-@property (readonly) NSUInteger currentVerticalPageNumber;
+@property (readonly) NSUInteger horizontalPageNumber;
+@property (readonly) NSUInteger verticalPageNumber;
+
+@property (copy, nonatomic) MKHGHUISVOnDidChangeHorizontalPage onDidChangeHorizontalPage;
+@property (copy, nonatomic) MKHGHUISVOnDidChangeVerticalPage onDidChangeVerticalPage;
+
 @property (readonly) BOOL isBouncing;
 @property (readonly) BOOL isBouncingHorizontally;
 @property (readonly) BOOL isBouncingLeftEdge;
@@ -22,5 +37,11 @@
 
 - (CGSize)defaultContentSizeWithMargins:(CGPoint)margins;
 - (void)resetInsets;
+
+- (void)updatePageNumbers;
+
+// for Xcode autocomplete support:
+- (void)setOnDidChangeHorizontalPage:(MKHGHUISVOnDidChangeHorizontalPage)onDidChangeHorizontalPage;
+- (void)setOnDidChangeVerticalPage:(MKHGHUISVOnDidChangeVerticalPage)onDidChangeVerticalPage;
 
 @end

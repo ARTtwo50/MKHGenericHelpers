@@ -8,8 +8,19 @@
 
 #import "UIScrollView+MKHGenericHelpers.h"
 
+#import <objc/runtime.h>
+
 #import "UIResponder+MKHGenericHelpers.h"
 #import "UIView+MKHGenericHelpers.h"
+
+//===
+
+//static const void *MKHGHUISVPreviousHorizontalPageNumberKey = &MKHGHUISVPreviousHorizontalPageNumberKey;
+static const void *MKHGHUISVHorizontalPageNumberKey = &MKHGHUISVHorizontalPageNumberKey;
+//static const void *MKHGHUISVPreviousVerticalPageNumberKey = &MKHGHUISVPreviousVerticalPageNumberKey;
+static const void *MKHGHUISVVerticalPageNumberKey = &MKHGHUISVVerticalPageNumberKey;
+static const void *MKHGHUISVOnDidChangeHorizontalPageKey = &MKHGHUISVOnDidChangeHorizontalPageKey;
+static const void *MKHGHUISVOnDidChangeVerticalPageKey = &MKHGHUISVOnDidChangeVerticalPageKey;
 
 //===
 
@@ -17,37 +28,103 @@
 
 #pragma mark - Property accessors
 
-- (NSUInteger)currentHorizontalPageNumber
+- (NSUInteger)horizontalPageNumber
 {
-    NSInteger result = (NSInteger)(floor(self.contentOffset.x/self.frame.size.width));
-    
-    //===
-    
-    if (result < 0)
-    {
-        result = 0;
-    }
-    
-    //===
-    
-    return (NSUInteger)result;
+    return
+    ((NSNumber *)
+     objc_getAssociatedObject(self,
+                              MKHGHUISVHorizontalPageNumberKey)).unsignedIntegerValue;
 }
 
-- (NSUInteger)currentVerticalPageNumber
+- (void)setHorizontalPageNumber:(NSUInteger)newValue
 {
-    NSInteger result = (NSInteger)(floor(self.contentOffset.y/self.frame.size.height));
+    NSUInteger previousValue = self.horizontalPageNumber;
     
     //===
     
-    if (result < 0)
+    if (previousValue != newValue)
     {
-        result = 0;
+        objc_setAssociatedObject(self,
+                                 MKHGHUISVHorizontalPageNumberKey,
+                                 [NSNumber numberWithUnsignedInteger:newValue],
+                                 OBJC_ASSOCIATION_RETAIN);
+        
+        //===
+        
+        if (self.onDidChangeHorizontalPage)
+        {
+            self.onDidChangeHorizontalPage(self, previousValue, newValue);
+        }
     }
+}
+
+//===
+
+- (NSUInteger)verticalPageNumber
+{
+    return
+    ((NSNumber *)
+     objc_getAssociatedObject(self,
+                              MKHGHUISVVerticalPageNumberKey)).unsignedIntegerValue;
+}
+
+- (void)setVerticalPageNumber:(NSUInteger)newValue
+{
+    NSUInteger previousValue = self.verticalPageNumber;
     
     //===
     
-    return (NSUInteger)result;
+    if (previousValue != newValue)
+    {
+        objc_setAssociatedObject(self,
+                                 MKHGHUISVVerticalPageNumberKey,
+                                 [NSNumber numberWithUnsignedInteger:newValue],
+                                 OBJC_ASSOCIATION_RETAIN);
+        
+        //===
+        
+        if (self.onDidChangeVerticalPage)
+        {
+            self.onDidChangeVerticalPage(self, previousValue, newValue);
+        }
+    }
 }
+
+//===
+
+- (MKHGHUISVOnDidChangeHorizontalPage)onDidChangeHorizontalPage
+{
+    return
+    objc_getAssociatedObject(self,
+                             MKHGHUISVOnDidChangeHorizontalPageKey);
+}
+
+- (void)setOnDidChangeHorizontalPage:(MKHGHUISVOnDidChangeHorizontalPage)handler
+{
+    objc_setAssociatedObject(self,
+                             MKHGHUISVOnDidChangeHorizontalPageKey,
+                             handler,
+                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+//===
+
+- (MKHGHUISVOnDidChangeVerticalPage)onDidChangeVerticalPage
+{
+    return
+    objc_getAssociatedObject(self,
+                             MKHGHUISVOnDidChangeVerticalPageKey);
+}
+
+- (void)setOnDidChangeVerticalPage:(MKHGHUISVOnDidChangeVerticalPage)handler
+{
+    objc_setAssociatedObject(self,
+                             MKHGHUISVOnDidChangeVerticalPageKey,
+                             handler,
+                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+//===
 
 - (BOOL)isBouncing
 {
@@ -175,6 +252,36 @@
 {
     self.contentInset = UIEdgeInsetsZero;
     self.scrollIndicatorInsets = self.contentInset;
+}
+
+- (void)updatePageNumbers
+{
+    if (!self.isDecelerating && !self.isDragging)
+    {
+        // can update
+        
+        NSInteger pageNumber =
+        (NSInteger)(floor(self.contentOffset.x/self.frame.size.width));
+        
+        if (pageNumber < 0)
+        {
+            pageNumber = 0;
+        }
+        
+        self.horizontalPageNumber = pageNumber;
+        
+        //===
+        
+        pageNumber =
+        (NSInteger)(floor(self.contentOffset.y/self.frame.size.height));
+        
+        if (pageNumber < 0)
+        {
+            pageNumber = 0;
+        }
+        
+        self.verticalPageNumber = pageNumber;
+    }
 }
 
 @end
