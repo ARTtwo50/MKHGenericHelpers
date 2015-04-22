@@ -11,18 +11,18 @@
 //===
 
 typedef void (^MKHGHUISVOnDidChangeHorizontalPage)(UIScrollView* scrollView,
-                                                   NSUInteger previousValue,
-                                                   NSUInteger newValue);
+                                                   NSInteger previousValue,
+                                                   NSInteger newValue);
 typedef void (^MKHGHUISVOnDidChangeVerticalPage)(UIScrollView* scrollView,
-                                                 NSUInteger previousValue,
-                                                 NSUInteger newValue);
+                                                 NSInteger previousValue,
+                                                 NSInteger newValue);
 
 //===
 
 @interface UIScrollView (MKHGenericHelpers)
 
-@property (readonly) NSUInteger horizontalPageNumber;
-@property (readonly) NSUInteger verticalPageNumber;
+@property (readonly) NSInteger horizontalPageNumber;
+@property (readonly) NSInteger verticalPageNumber;
 
 @property (copy, nonatomic) MKHGHUISVOnDidChangeHorizontalPage onDidChangeHorizontalPage;
 @property (copy, nonatomic) MKHGHUISVOnDidChangeVerticalPage onDidChangeVerticalPage;

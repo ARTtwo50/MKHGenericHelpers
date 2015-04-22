@@ -28,17 +28,30 @@ static const void *MKHGHUISVOnDidChangeVerticalPageKey = &MKHGHUISVOnDidChangeVe
 
 #pragma mark - Property accessors
 
-- (NSUInteger)horizontalPageNumber
+- (NSInteger)horizontalPageNumber
 {
-    return
+    NSInteger result = -1;
+    
+    //===
+    
+    NSNumber *storeValue =
     ((NSNumber *)
      objc_getAssociatedObject(self,
-                              MKHGHUISVHorizontalPageNumberKey)).unsignedIntegerValue;
+                              MKHGHUISVHorizontalPageNumberKey));
+    
+    if (storeValue)
+    {
+        result = storeValue.integerValue;
+    }
+    
+    //===
+    
+    return result;
 }
 
-- (void)setHorizontalPageNumber:(NSUInteger)newValue
+- (void)setHorizontalPageNumber:(NSInteger)newValue
 {
-    NSUInteger previousValue = self.horizontalPageNumber;
+    NSInteger previousValue = self.horizontalPageNumber;
     
     //===
     
@@ -46,7 +59,7 @@ static const void *MKHGHUISVOnDidChangeVerticalPageKey = &MKHGHUISVOnDidChangeVe
     {
         objc_setAssociatedObject(self,
                                  MKHGHUISVHorizontalPageNumberKey,
-                                 [NSNumber numberWithUnsignedInteger:newValue],
+                                 [NSNumber numberWithInteger:newValue],
                                  OBJC_ASSOCIATION_RETAIN);
         
         //===
@@ -60,17 +73,30 @@ static const void *MKHGHUISVOnDidChangeVerticalPageKey = &MKHGHUISVOnDidChangeVe
 
 //===
 
-- (NSUInteger)verticalPageNumber
+- (NSInteger)verticalPageNumber
 {
-    return
+    NSInteger result = -1;
+    
+    //===
+    
+    NSNumber *storeValue =
     ((NSNumber *)
      objc_getAssociatedObject(self,
-                              MKHGHUISVVerticalPageNumberKey)).unsignedIntegerValue;
+                              MKHGHUISVVerticalPageNumberKey));
+    
+    if (storeValue)
+    {
+        result = storeValue.integerValue;
+    }
+    
+    //===
+    
+    return result;
 }
 
-- (void)setVerticalPageNumber:(NSUInteger)newValue
+- (void)setVerticalPageNumber:(NSInteger)newValue
 {
-    NSUInteger previousValue = self.verticalPageNumber;
+    NSInteger previousValue = self.verticalPageNumber;
     
     //===
     
@@ -78,7 +104,7 @@ static const void *MKHGHUISVOnDidChangeVerticalPageKey = &MKHGHUISVOnDidChangeVe
     {
         objc_setAssociatedObject(self,
                                  MKHGHUISVVerticalPageNumberKey,
-                                 [NSNumber numberWithUnsignedInteger:newValue],
+                                 [NSNumber numberWithInteger:newValue],
                                  OBJC_ASSOCIATION_RETAIN);
         
         //===
