@@ -44,6 +44,7 @@ typedef void (^AnimationCompletionBlock)(BOOL finished);
 - (void)setCenterY:(CGFloat)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock;
 - (void)setCenter:(CGPoint)newValue animated:(BOOL)animated;
 - (void)setCenter:(CGPoint)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock;
+- (void)placeInCenterOfSuperview;
 - (void)setWidth:(CGFloat)newValue animated:(BOOL)animated;
 - (void)setWidth:(CGFloat)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock;
 - (void)setHeight:(CGFloat)newValue animated:(BOOL)animated;
@@ -87,8 +88,6 @@ typedef void (^AnimationCompletionBlock)(BOOL finished);
 - (void)sendToBack;
 
 - (id)configureWithSuperview:(UIView *)targetSuperView;
-
-- (void)placeInCenterOfSuperview;
 
 - (void)applyFontWithName:(NSString *)fontName andSize:(CGFloat)fontSize;
 - (void)applyFontWithName:(NSString *)fontName;

@@ -309,6 +309,11 @@ UIViewAnimationOptions defaultAnimationOptions = UIViewAnimationOptionCurveEaseI
     }
 }
 
+- (void)placeInCenterOfSuperview
+{
+    self.center = CGPointMake(self.superview.width/2, self.superview.height/2);
+}
+
 //===
 
 - (CGFloat)width
@@ -762,24 +767,6 @@ UIViewAnimationOptions defaultAnimationOptions = UIViewAnimationOptionCurveEaseI
     [targetSuperView addSubview:self];
     
     return self;
-}
-
-- (void)placeInCenterOfSuperview
-{
-    CGRect superBounds = self.superview.bounds;
-    CGRect targetFrame = self.frame;
-    
-    //===
-    
-    targetFrame.origin.x =
-    (superBounds.size.width - targetFrame.size.width) / 2;
-    
-    targetFrame.origin.y =
-    (superBounds.size.height - targetFrame.size.height) / 2;
-    
-    //===
-    
-    self.frame = targetFrame;
 }
 
 - (void)applyFontWithName:(NSString *)fontName andSize:(CGFloat)fontSize
