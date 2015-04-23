@@ -34,6 +34,8 @@ UIViewAnimationOptions defaultAnimationOptions = UIViewAnimationOptionCurveEaseI
     self.hidden = !newValue;
 }
 
+//===
+
 -(CGFloat)originX
 {
     return self.frame.origin.x;
@@ -55,132 +57,10 @@ UIViewAnimationOptions defaultAnimationOptions = UIViewAnimationOptionCurveEaseI
     }
 }
 
-- (CGFloat)originY
+- (void)setOriginX:(CGFloat)newValue animated:(BOOL)animated
 {
-    return self.frame.origin.y;
+    [self setOriginX:newValue animated:animated withCompletion:nil];
 }
-
-- (void)setOriginY:(CGFloat)newValue
-{
-    CGRect frame = self.frame;
-    
-    //===
-    
-    if (frame.origin.y != newValue)
-    {
-        frame.origin.y = newValue;
-        
-        //===
-        
-        self.frame = frame;
-    }
-}
-
-- (CGPoint)origin
-{
-    return self.frame.origin;
-}
-
-- (void)setOrigin:(CGPoint)newValue
-{
-    CGRect frame = self.frame;
-    
-    //===
-    
-    if (!CGPointEqualToPoint(frame.origin, newValue))
-    {
-        frame.origin = newValue;
-        
-        //===
-        
-        self.frame = frame;
-    }
-}
-
-- (CGFloat)height
-{
-    return self.frame.size.height;
-}
-
-- (void)setHeight:(CGFloat)newValue
-{
-    CGRect frame = self.frame;
-    
-    //===
-    
-    if (frame.size.height != newValue)
-    {
-        frame.size.height = newValue;
-        
-        //===
-        
-        self.frame = frame;
-    }
-}
-
-- (CGFloat)width
-{
-    return self.frame.size.width;
-}
-
-- (void)setWidth:(CGFloat)newValue
-{
-    CGRect frame = self.frame;
-    
-    //===
-    
-    if (frame.size.width != newValue)
-    {
-        frame.size.width = newValue;
-        
-        //===
-        
-        self.frame = frame;
-    }
-}
-
-- (CGSize)size
-{
-    return self.frame.size;
-}
-
-- (void)setSize:(CGSize)newValue
-{
-    CGRect frame = self.frame;
-    
-    //===
-    
-    if (!CGSizeEqualToSize(frame.size, newValue))
-    {
-        frame.size = newValue;
-        
-        //===
-        
-        self.frame = frame;
-    }
-}
-
-- (CGFloat)centerX
-{
-    return self.center.x;
-}
-
-- (void)setCenterX:(CGFloat)newValue
-{
-    self.center = CGPointMake(newValue, self.center.y);
-}
-
-- (CGFloat)centerY
-{
-    return self.center.y;
-}
-
-- (void)setCenterY:(CGFloat)newValue
-{
-    self.center = CGPointMake(self.center.x, newValue);
-}
-
-#pragma mark - Helpers
 
 - (void)setOriginX:(CGFloat)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock
 {
@@ -205,6 +85,34 @@ UIViewAnimationOptions defaultAnimationOptions = UIViewAnimationOptionCurveEaseI
     {
         executionBlock();
     }
+}
+
+//===
+
+- (CGFloat)originY
+{
+    return self.frame.origin.y;
+}
+
+- (void)setOriginY:(CGFloat)newValue
+{
+    CGRect frame = self.frame;
+    
+    //===
+    
+    if (frame.origin.y != newValue)
+    {
+        frame.origin.y = newValue;
+        
+        //===
+        
+        self.frame = frame;
+    }
+}
+
+- (void)setOriginY:(CGFloat)newValue animated:(BOOL)animated
+{
+    [self setOriginY:newValue animated:animated withCompletion:nil];
 }
 
 - (void)setOriginY:(CGFloat)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock
@@ -232,6 +140,34 @@ UIViewAnimationOptions defaultAnimationOptions = UIViewAnimationOptionCurveEaseI
     }
 }
 
+//===
+
+- (CGPoint)origin
+{
+    return self.frame.origin;
+}
+
+- (void)setOrigin:(CGPoint)newValue
+{
+    CGRect frame = self.frame;
+    
+    //===
+    
+    if (!CGPointEqualToPoint(frame.origin, newValue))
+    {
+        frame.origin = newValue;
+        
+        //===
+        
+        self.frame = frame;
+    }
+}
+
+- (void)setOrigin:(CGPoint)newValue animated:(BOOL)animated
+{
+    [self setOrigin:newValue animated:animated withCompletion:nil];
+}
+
 - (void)setOrigin:(CGPoint)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock
 {
     MKHSimpleBlock executionBlock = ^{
@@ -255,6 +191,23 @@ UIViewAnimationOptions defaultAnimationOptions = UIViewAnimationOptionCurveEaseI
     {
         executionBlock();
     }
+}
+
+//===
+
+- (CGFloat)centerX
+{
+    return self.center.x;
+}
+
+- (void)setCenterX:(CGFloat)newValue
+{
+    self.center = CGPointMake(newValue, self.center.y);
+}
+
+- (void)setCenterX:(CGFloat)newValue animated:(BOOL)animated
+{
+    [self setCenterX:newValue animated:animated withCompletion:nil];
 }
 
 - (void)setCenterX:(CGFloat)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock
@@ -282,6 +235,23 @@ UIViewAnimationOptions defaultAnimationOptions = UIViewAnimationOptionCurveEaseI
     }
 }
 
+//===
+
+- (CGFloat)centerY
+{
+    return self.center.y;
+}
+
+- (void)setCenterY:(CGFloat)newValue
+{
+    self.center = CGPointMake(self.center.x, newValue);
+}
+
+- (void)setCenterY:(CGFloat)newValue animated:(BOOL)animated
+{
+    [self setCenterY:newValue animated:animated withCompletion:nil];
+}
+
 - (void)setCenterY:(CGFloat)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock
 {
     MKHSimpleBlock executionBlock = ^{
@@ -305,6 +275,13 @@ UIViewAnimationOptions defaultAnimationOptions = UIViewAnimationOptionCurveEaseI
     {
         executionBlock();
     }
+}
+
+//===
+
+- (void)setCenter:(CGPoint)newValue animated:(BOOL)animated
+{
+    [self setCenter:newValue animated:animated withCompletion:nil];
 }
 
 - (void)setCenter:(CGPoint)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock
@@ -332,6 +309,34 @@ UIViewAnimationOptions defaultAnimationOptions = UIViewAnimationOptionCurveEaseI
     }
 }
 
+//===
+
+- (CGFloat)width
+{
+    return self.frame.size.width;
+}
+
+- (void)setWidth:(CGFloat)newValue
+{
+    CGRect frame = self.frame;
+    
+    //===
+    
+    if (frame.size.width != newValue)
+    {
+        frame.size.width = newValue;
+        
+        //===
+        
+        self.frame = frame;
+    }
+}
+
+- (void)setWidth:(CGFloat)newValue animated:(BOOL)animated
+{
+    [self setWidth:newValue animated:animated withCompletion:nil];
+}
+
 - (void)setWidth:(CGFloat)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock
 {
     MKHSimpleBlock executionBlock = ^{
@@ -355,6 +360,34 @@ UIViewAnimationOptions defaultAnimationOptions = UIViewAnimationOptionCurveEaseI
     {
         executionBlock();
     }
+}
+
+//===
+
+- (CGFloat)height
+{
+    return self.frame.size.height;
+}
+
+- (void)setHeight:(CGFloat)newValue
+{
+    CGRect frame = self.frame;
+    
+    //===
+    
+    if (frame.size.height != newValue)
+    {
+        frame.size.height = newValue;
+        
+        //===
+        
+        self.frame = frame;
+    }
+}
+
+- (void)setHeight:(CGFloat)newValue animated:(BOOL)animated
+{
+    [self setHeight:newValue animated:animated withCompletion:nil];
 }
 
 - (void)setHeight:(CGFloat)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock
@@ -382,6 +415,34 @@ UIViewAnimationOptions defaultAnimationOptions = UIViewAnimationOptionCurveEaseI
     }
 }
 
+//===
+
+- (CGSize)size
+{
+    return self.frame.size;
+}
+
+- (void)setSize:(CGSize)newValue
+{
+    CGRect frame = self.frame;
+    
+    //===
+    
+    if (!CGSizeEqualToSize(frame.size, newValue))
+    {
+        frame.size = newValue;
+        
+        //===
+        
+        self.frame = frame;
+    }
+}
+
+- (void)setSize:(CGSize)newValue animated:(BOOL)animated
+{
+    [self setSize:newValue animated:animated withCompletion:nil];
+}
+
 - (void)setSize:(CGSize)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock
 {
     MKHSimpleBlock executionBlock = ^{
@@ -405,6 +466,13 @@ UIViewAnimationOptions defaultAnimationOptions = UIViewAnimationOptionCurveEaseI
     {
         executionBlock();
     }
+}
+
+//===
+
+- (void)setFrame:(CGRect)newValue animated:(BOOL)animated
+{
+    [self setFrame:newValue animated:animated withCompletion:nil];
 }
 
 - (void)setFrame:(CGRect)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock
@@ -432,55 +500,31 @@ UIViewAnimationOptions defaultAnimationOptions = UIViewAnimationOptionCurveEaseI
     }
 }
 
-- (void)setOriginX:(CGFloat)newValue animated:(BOOL)animated
+#pragma mark - Constructors
+
++ (instancetype)newWithSuperview:(UIView *)targetSuperView
 {
-    [self setOriginX:newValue animated:animated withCompletion:nil];
+    UIView *result = [self new];
+    [result configureWithSuperview:targetSuperView];
+    
+    //===
+    
+    return result;
 }
 
-- (void)setOriginY:(CGFloat)newValue animated:(BOOL)animated
++ (instancetype)newWithNib
 {
-    [self setOriginY:newValue animated:animated withCompletion:nil];
+    return [self newWithNibNamed:NSStringFromClass(self) owner:nil options:nil];
 }
 
-- (void)setOrigin:(CGPoint)newValue animated:(BOOL)animated
++ (instancetype)newWithNibNamed:(NSString *)nibName owner:(id)owner options:(NSDictionary *)options
 {
-    [self setOrigin:newValue animated:animated withCompletion:nil];
+    return
+    [[NSBundle mainBundle]
+     loadNibNamed:nibName owner:owner options:options].lastObject;
 }
 
-- (void)setCenterX:(CGFloat)newValue animated:(BOOL)animated
-{
-    [self setCenterX:newValue animated:animated withCompletion:nil];
-}
-
-- (void)setCenterY:(CGFloat)newValue animated:(BOOL)animated
-{
-    [self setCenterY:newValue animated:animated withCompletion:nil];
-}
-
-- (void)setCenter:(CGPoint)newValue animated:(BOOL)animated
-{
-    [self setCenter:newValue animated:animated withCompletion:nil];
-}
-
-- (void)setWidth:(CGFloat)newValue animated:(BOOL)animated
-{
-    [self setWidth:newValue animated:animated withCompletion:nil];
-}
-
-- (void)setHeight:(CGFloat)newValue animated:(BOOL)animated
-{
-    [self setHeight:newValue animated:animated withCompletion:nil];
-}
-
-- (void)setSize:(CGSize)newValue animated:(BOOL)animated
-{
-    [self setSize:newValue animated:animated withCompletion:nil];
-}
-
-- (void)setFrame:(CGRect)newValue animated:(BOOL)animated
-{
-    [self setFrame:newValue animated:animated withCompletion:nil];
-}
+#pragma mark - Other
 
 + (BOOL)isView:(UIView *)childView aSubviewOfView:(UIView *)superView
 {
@@ -510,32 +554,6 @@ UIViewAnimationOptions defaultAnimationOptions = UIViewAnimationOptionCurveEaseI
     //===
     
     return result;
-}
-
-+ (instancetype)newWithSuperview:(UIView *)targetSuperView
-{
-    UIView *result = [[self class] new];
-    [result configureWithSuperview:targetSuperView];
-    
-    //===
-    
-    return result;
-}
-
-+ (instancetype)newWithNibNamed:(NSString *)nibName
-{
-    static UIViewController *ctrl = nil;
-    
-    if (!ctrl)
-    {
-        ctrl = [UIViewController new];
-    }
-    
-    //===
-    
-    return
-    [[NSBundle mainBundle]
-     loadNibNamed:nibName owner:ctrl options:nil].lastObject;
 }
 
 - (void)removeFromSuperviewAnimated

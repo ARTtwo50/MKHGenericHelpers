@@ -26,40 +26,38 @@ typedef void (^AnimationCompletionBlock)(BOOL finished);
 @property CGFloat originX;
 @property CGFloat originY;
 @property CGPoint origin;
+@property CGFloat centerX;
+@property CGFloat centerY;
 @property CGFloat height;
 @property CGFloat width;
 @property CGSize size;
-@property CGFloat centerX;
-@property CGFloat centerY;
-
-- (void)setOriginX:(CGFloat)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock;
-- (void)setOriginY:(CGFloat)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock;
-- (void)setOrigin:(CGPoint)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock;
-- (void)setCenterX:(CGFloat)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock;
-- (void)setCenterY:(CGFloat)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock;
-- (void)setCenter:(CGPoint)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock;
-- (void)setWidth:(CGFloat)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock;
-- (void)setHeight:(CGFloat)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock;
-- (void)setSize:(CGSize)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock;
-- (void)setFrame:(CGRect)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock;
 
 - (void)setOriginX:(CGFloat)newValue animated:(BOOL)animated;
+- (void)setOriginX:(CGFloat)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock;
 - (void)setOriginY:(CGFloat)newValue animated:(BOOL)animated;
+- (void)setOriginY:(CGFloat)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock;
 - (void)setOrigin:(CGPoint)newValue animated:(BOOL)animated;
+- (void)setOrigin:(CGPoint)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock;
 - (void)setCenterX:(CGFloat)newValue animated:(BOOL)animated;
+- (void)setCenterX:(CGFloat)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock;
 - (void)setCenterY:(CGFloat)newValue animated:(BOOL)animated;
+- (void)setCenterY:(CGFloat)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock;
 - (void)setCenter:(CGPoint)newValue animated:(BOOL)animated;
+- (void)setCenter:(CGPoint)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock;
 - (void)setWidth:(CGFloat)newValue animated:(BOOL)animated;
+- (void)setWidth:(CGFloat)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock;
 - (void)setHeight:(CGFloat)newValue animated:(BOOL)animated;
+- (void)setHeight:(CGFloat)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock;
 - (void)setSize:(CGSize)newValue animated:(BOOL)animated;
+- (void)setSize:(CGSize)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock;
 - (void)setFrame:(CGRect)newValue animated:(BOOL)animated;
-
-//=== Helpers
-
-+ (BOOL)isView:(UIView *)childView aSubviewOfView:(UIView *)superView;
+- (void)setFrame:(CGRect)newValue animated:(BOOL)animated withCompletion:(AnimationCompletionBlock)completionBlock;
 
 + (instancetype)newWithSuperview:(UIView *)targetSuperView;
-+ (instancetype)newWithNibNamed:(NSString *)nibName;
++ (instancetype)newWithNib;
++ (instancetype)newWithNibNamed:(NSString *)nibName owner:(id)owner options:(NSDictionary *)options;
+
++ (BOOL)isView:(UIView *)childView aSubviewOfView:(UIView *)superView;
 
 - (void)removeFromSuperviewAnimated;
 
