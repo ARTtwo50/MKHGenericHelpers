@@ -280,6 +280,16 @@ static const void *MKHGHUISVOnDidChangeVerticalPageKey = &MKHGHUISVOnDidChangeVe
     self.scrollIndicatorInsets = self.contentInset;
 }
 
+- (void)resetContentOffset
+{
+    [self resetContentOffsetAnimated:NO];
+}
+
+- (void)resetContentOffsetAnimated:(BOOL)animated
+{
+    [self setContentOffset:CGPointZero animated:animated];
+}
+
 - (void)updatePageNumbers
 {
     if (!self.isDecelerating && !self.isDragging)

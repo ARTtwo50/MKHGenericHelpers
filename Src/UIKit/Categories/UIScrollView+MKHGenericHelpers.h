@@ -37,6 +37,8 @@ typedef void (^MKHGHUISVOnDidChangeVerticalPage)(UIScrollView* scrollView,
 
 - (CGSize)defaultContentSizeWithMargins:(CGPoint)margins;
 - (void)resetInsets;
+- (void)resetContentOffset;
+- (void)resetContentOffsetAnimated:(BOOL)animated;
 
 - (void)updatePageNumbers;
 
