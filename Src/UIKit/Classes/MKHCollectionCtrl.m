@@ -252,4 +252,41 @@
     }
 }
 
+#pragma mark - UICollectionViewDelegateFlowLayout
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGSize result = CGSizeZero;
+    
+    //===
+    
+    if ([collectionView.collectionViewLayout
+         isKindOfClass:UICollectionViewFlowLayout.class])
+    {
+        result = ((UICollectionViewFlowLayout *)layout).itemSize;
+        
+        //===
+        
+        MKHCollectionSectionClass *targetSectionItemList =
+        [self itemListForSectionAtIndex:indexPath.section];
+        
+        if (targetSectionItemList)
+        {
+            id targetItem = [targetSectionItemList safeObjectAtIndex:indexPath.item];
+            
+            //===
+            
+            if (targetItem &&
+                self.onSizeForItem)
+            {
+                result = self.onSizeForItem(self, indexPath, targetItem);
+            }
+        }
+    }
+    
+    //===
+    
+    return result;
+}
+
 @end
