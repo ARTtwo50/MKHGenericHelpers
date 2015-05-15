@@ -104,8 +104,8 @@
 #define MKH_isClassOfObject(class, object) [object isKindOfClass:class]
 
 #define MKH_isNonZeroLength(object) ([object respondsToSelector:@selector(length)] && ([object length] > 0))
-#define MKH_isNonZeroData(object) (isClassOfObject([NSData class], object) && isNonZeroLength(object))
-#define MKH_isNonZeroString(object) (isClassOfObject([NSString class], object) && isNonZeroLength(object))
+#define MKH_isNonZeroData(object) (isClassOfObject([NSData class], object) && MKH_isNonZeroLength(object))
+#define MKH_isNonZeroString(object) (isClassOfObject([NSString class], object) && MKH_isNonZeroLength(object))
 
 #define MKH_notNull(object) (object ? object : [NSNull null])
 #define MKH_notNullAlter(primaryValue, alterValue) (primaryValue ? primaryValue : alterValue)
