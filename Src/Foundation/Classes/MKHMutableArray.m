@@ -16,22 +16,6 @@
 
 //===
 
-@interface MKHMAResetParamSet ()
-
-@property (strong, nonatomic) MKHMutableArray *array;
-@property (copy, nonatomic) NSArray *previousValues;
-@property (copy, nonatomic) NSArray *targetValues;
-
-@end
-
-@implementation MKHMAResetParamSet
-
-//
-
-@end
-
-//===
-
 @interface MKHMAChangeParamSet ()
 
 @property (strong, nonatomic) MKHMutableArray *array;
@@ -44,8 +28,6 @@
 
 @implementation MKHMAChangeParamSet
 
-//
-
 @end
 
 //===
@@ -55,8 +37,6 @@
 // backing store
 @property (strong, nonatomic) NSMutableArray *store;
 
-@property (readonly, nonatomic) NSMapTable *willResetContentSubscriptions;
-@property (readonly, nonatomic) NSMapTable *didResetContentSubscriptions;
 @property (readonly, nonatomic) NSMapTable *willChangeContentSubscriptions;
 @property (readonly, nonatomic) NSMapTable *didChangeContentSubscriptions;
 @property (readonly, nonatomic) NSMapTable *willChangeSelectionSubscriptions;
@@ -380,16 +360,6 @@
 
 #pragma mark - Property accessors
 
-- (NSMapTable *)willResetContentSubscriptions
-{
-    return [self mapForKey:@"willResetContentSubscriptions"];
-}
-
-- (NSMapTable *)didResetContentSubscriptions
-{
-    return [self mapForKey:@"didResetContentSubscriptions"];
-}
-
 - (NSMapTable *)willChangeContentSubscriptions
 {
     return [self mapForKey:@"willChangeContentSubscriptions"];
@@ -494,28 +464,6 @@
     };
     
     self.totalCount = 0;
-}
-
-- (void)setObjectsFromArray:(NSArray *)otherArray
-{
-    MKHMAResetParamSet *params = [MKHMAResetParamSet new];
-    
-    params.array = self;
-    params.previousValues = self;
-    params.targetValues = otherArray;
-    
-    //===
-    
-    [self willResetContentWithParams:params];
-    
-    //===
-    
-    [self removeAllObjects];
-    [self addObjectsFromArray:otherArray];
-    
-    //===
-    
-    [self didResetContentWithParams:params];
 }
 
 #pragma mark - Add to selection
@@ -797,8 +745,6 @@
     }
 }
 
-#pragma mark - Reset
-
 - (void)resetSelection
 {
     for (NSUInteger i = 0; i < self.store.count; i++)
@@ -830,22 +776,6 @@
 }
 
 #pragma mark - Notifications - Public
-
-- (void)subscribe:(id)subscriber onWillResetContent:(MKHMAResetNotificationBlock)notificationBlock
-{
-    [self
-     addNotification:notificationBlock
-     subscriber:subscriber
-     targetTable:self.willResetContentSubscriptions];
-}
-
-- (void)subscribe:(id)subscriber onDidResetContent:(MKHMAResetNotificationBlock)notificationBlock
-{
-    [self
-     addNotification:notificationBlock
-     subscriber:subscriber
-     targetTable:self.didResetContentSubscriptions];
-}
 
 - (void)subscribe:(id)subscriber onWillChangeContent:(MKHMAChangeNotificationBlock)notificationBlock
 {
@@ -883,14 +813,6 @@
 {
     [self
      remove:subscriber
-     fromTable:self.willResetContentSubscriptions];
-    
-    [self
-     remove:subscriber
-     fromTable:self.didResetContentSubscriptions];
-    
-    [self
-     remove:subscriber
      fromTable:self.willChangeContentSubscriptions];
 
     [self
@@ -926,42 +848,6 @@
 }
 
 #pragma mark - Notifications - Private - Send notifications
-
-- (void)notifyAboutResetWithTable:(NSMapTable *)targetTable
-                           params:(MKHMAResetParamSet *)params
-{
-    for (id key in [[targetTable keyEnumerator] allObjects])
-    {
-        MKHMAResetNotificationBlock block = [targetTable objectForKey:key];
-        
-        if (block)
-        {
-            block(params);
-        }
-    }
-}
-
-- (void)willResetContentWithParams:(MKHMAResetParamSet *)params
-{
-    _batchUpdate = YES;
-    
-    //===
-    
-    [self
-     notifyAboutResetWithTable:self.willResetContentSubscriptions
-     params:params];
-}
-
-- (void)didResetContentWithParams:(MKHMAResetParamSet *)params
-{
-    [self
-     notifyAboutResetWithTable:self.didResetContentSubscriptions
-     params:params];
-    
-    //===
-    
-    _batchUpdate = NO;
-}
 
 - (void)notifyAboutChangeWithTable:(NSMapTable *)targetTable
                             params:(MKHMAChangeParamSet *)params
