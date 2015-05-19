@@ -11,7 +11,6 @@
 //===
 
 @class MKHMutableArray;
-@class MKHMAResetParamSet;
 @class MKHMAChangeParamSet;
 
 //===
@@ -27,18 +26,7 @@ typedef enum
 //===
 
 typedef BOOL(^MKHMAEqualityCheckBlock)(id leftObject, id rightObject);
-typedef void(^MKHMAResetNotificationBlock)(MKHMAResetParamSet *params);
 typedef void(^MKHMAChangeNotificationBlock)(MKHMAChangeParamSet *params);
-
-//===
-
-@interface MKHMAResetParamSet : NSObject
-
-@property (readonly, strong, nonatomic) MKHMutableArray *array;
-@property (readonly, copy, nonatomic) NSArray *previousValues;
-@property (readonly, copy, nonatomic) NSArray *targetValues;
-
-@end
 
 //===
 
@@ -70,8 +58,6 @@ typedef void(^MKHMAChangeNotificationBlock)(MKHMAChangeParamSet *params);
 
 @property (nonatomic, copy) MKHMAEqualityCheckBlock onEqualityCheck;
 
-- (void)setObjectsFromArray:(NSArray *)otherArray;
-
 - (void)addToSelectionObject:(id)object;
 - (void)addToSelectionObjectAtIndex:(NSUInteger)index;
 - (void)addToSelectionObjects:(NSArray *)objectList;
@@ -85,9 +71,6 @@ typedef void(^MKHMAChangeNotificationBlock)(MKHMAChangeParamSet *params);
 - (void)removeFromSelectionObjects:(NSArray *)objectList;
 
 - (void)resetSelection;
-
-- (void)subscribe:(id)subscriber onWillResetContent:(MKHMAResetNotificationBlock)notificationBlock;
-- (void)subscribe:(id)subscriber onDidResetContent:(MKHMAResetNotificationBlock)notificationBlock;
 
 - (void)subscribe:(id)subscriber onWillChangeContent:(MKHMAChangeNotificationBlock)notificationBlock;
 - (void)subscribe:(id)subscriber onDidChangeContent:(MKHMAChangeNotificationBlock)notificationBlock;
