@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "MKHGenericHelpers"
-  s.version      = "1.0.0"
+  s.version      = "1.1.1"
   s.summary      = "Set of generic helpers for iOS SDK"
   s.homepage     = "https://github.com/maximkhatskevich/MKHGenericHelpers"
 
