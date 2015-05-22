@@ -24,6 +24,9 @@
 typedef CGSize(^MKHCCSizeForItem)(MKHCollectionCtrl *collectionCtrl,
                                   NSIndexPath *indexPath,
                                   id targetItem);
+typedef NSString *(^MKHCCCellReuseId)(MKHCollectionCtrl *collectionCtrl,
+                                      NSIndexPath *indexPath,
+                                      id targetItem);
 typedef void(^MKHCCConfigureCell)(MKHCollectionCtrl *collectionCtrl,
                                   NSIndexPath *indexPath,
                                   id targetItem,
@@ -45,6 +48,7 @@ typedef void(^MKHCCNeedMoreItems)(MKHCollectionCtrl *collectionCtrl,
 @property (copy, nonatomic) NSString *defaultCellIdentifier;
 
 @property (copy, nonatomic) MKHCCSizeForItem onSizeForItem;
+@property (copy, nonatomic) MKHCCCellReuseId onCellReuseId;
 @property (copy, nonatomic) MKHCCConfigureCell onConfigureCell;
 @property (copy, nonatomic) MKHCCSelectItem onDidSelectItem;
 @property (copy, nonatomic) MKHCCSelectItem onDidDeselectItem;
@@ -61,6 +65,7 @@ typedef void(^MKHCCNeedMoreItems)(MKHCollectionCtrl *collectionCtrl,
 - (MKHCollectionSectionClass *)itemListForSectionAtIndex:(NSUInteger)sectionIndex;
 
 - (void)setOnSizeForItem:(MKHCCSizeForItem)onSizeForItem;
+- (void)setOnCellReuseId:(MKHCCCellReuseId)onCellReuseId;
 - (void)setOnConfigureCell:(MKHCCConfigureCell)onConfigureCell;
 - (void)setOnDidSelectItem:(MKHCCSelectItem)onDidSelectItem;
 - (void)setOnDidDeselectItem:(MKHCCSelectItem)onDidDeselectItem;
