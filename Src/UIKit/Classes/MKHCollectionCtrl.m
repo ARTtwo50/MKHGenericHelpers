@@ -121,7 +121,25 @@
 
 - (NSString *)cellReuseIdentifierForIndexPath:(NSIndexPath *)indexPath
 {
-    return self.defaultCellIdentifier;
+    NSString *result = self.defaultCellIdentifier;
+    
+    //===
+    
+    MKHCollectionSectionClass *targetSectionItemList =
+    [self itemListForSectionAtIndex:indexPath.section];
+    
+    id targetItem = [targetSectionItemList safeObjectAtIndex:indexPath.item];
+    
+    //===
+    
+    if (self.onCellReuseId)
+    {
+        result = self.onCellReuseId(self, indexPath, targetItem);
+    }
+    
+    //===
+    
+    return result;
 }
 
 - (MKHCollectionSectionClass *)itemListForSectionAtIndex:(NSUInteger)sectionIndex
