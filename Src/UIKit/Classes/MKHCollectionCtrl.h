@@ -60,7 +60,7 @@ typedef void(^MKHCCNeedMoreItems)(MKHCollectionCtrl *collectionCtrl,
 - (void)resetContent;
 
 - (NSUInteger)numberOfItems;
-- (NSUInteger)numberOfItemsForSectionAtIndex:(NSUInteger)sectionIndex;
+- (NSUInteger)numberOfItemsInSectionAtIndex:(NSUInteger)sectionIndex;
 - (NSString *)cellReuseIdentifierForIndexPath:(NSIndexPath *)indexPath;
 - (MKHCollectionSectionClass *)itemListForSectionAtIndex:(NSUInteger)sectionIndex;
 
