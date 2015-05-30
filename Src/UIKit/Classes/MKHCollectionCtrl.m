@@ -88,10 +88,10 @@
 
 - (NSUInteger)numberOfItems
 {
-    return [self numberOfItemsForSectionAtIndex:0];
+    return [self numberOfItemsInSectionAtIndex:0];
 }
 
-- (NSUInteger)numberOfItemsForSectionAtIndex:(NSUInteger)sectionIndex
+- (NSUInteger)numberOfItemsInSectionAtIndex:(NSUInteger)sectionIndex
 {
     NSUInteger result = 0;
     
@@ -170,7 +170,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return [self numberOfItemsForSectionAtIndex:section];
+    return [self numberOfItemsInSectionAtIndex:section];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
