@@ -31,14 +31,14 @@
         
         //===
         
-        CGSize scaledSize = CGSizeMake(imageSize.width + imageScaleX,
-                                       imageSize.height + imageScaleX);
+        CGSize scaledSize = CGSizeMake(imageSize.width * imageScaleX,
+                                       imageSize.height * imageScaleX);
         
         if ((scaledSize.width < selfSize.width) ||
             (scaledSize.height < selfSize.height))
         {
-            scaledSize = CGSizeMake(imageSize.width + imageScaleY,
-                                    imageSize.height + imageScaleY);
+            scaledSize = CGSizeMake(imageSize.width * imageScaleY,
+                                    imageSize.height * imageScaleY);
 
         }
         
