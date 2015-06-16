@@ -11,6 +11,6 @@
 @interface UIImageView (MKHGenericHelpers)
 
 @property (readonly) CGFloat aspectFitImageScale;
-@property (readonly) CGRect aspectFitImageFrame; // AspectFitOnly, fact iimage frame (scaled)
+@property (readonly) CGRect aspectFitImageFrame; // AspectFitOnly, fact image frame (scaled)
 
 @end
