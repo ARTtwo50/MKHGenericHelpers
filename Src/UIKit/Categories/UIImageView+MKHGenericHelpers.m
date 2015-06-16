@@ -35,26 +35,44 @@
     
     //===
     
-    CGRect result = CGRectZero;
+    CGRect result;
     
     //===
     
-    if (self.image)
+    if (self.image &&
+        (self.contentMode == UIViewContentModeScaleAspectFit))
     {
+        CGSize selfSize = self.bounds.size;
         CGSize imageSize = self.image.size;
         
         CGFloat imageScaleX = self.bounds.size.width / imageSize.width;
         CGFloat imageScaleY = self.bounds.size.height / imageSize.height;
         
-        CGSize scaledImageSize =
-        CGSizeMake(imageSize.width * imageScaleX,
-                   imageSize.height * imageScaleY);
+        //===
+        
+        CGSize scaledSize = CGSizeMake(imageSize.width + imageScaleX,
+                                       imageSize.height + imageScaleX);
+        
+        if ((scaledSize.width < selfSize.width) ||
+            (scaledSize.height < selfSize.height))
+        {
+            scaledSize = CGSizeMake(imageSize.width + imageScaleY,
+                                    imageSize.height + imageScaleY);
+
+        }
+        
+        
+        //===
         
         result =
-        CGRectMake(0.5f * (self.bounds.size.width - scaledImageSize.width),
-                   0.5f * (self.bounds.size.height - scaledImageSize.height),
-                   scaledImageSize.width,
-                   scaledImageSize.height);
+        CGRectMake((selfSize.width - scaledSize.width) / 2,
+                   (selfSize.height - scaledSize.height) / 2,
+                   scaledSize.width,
+                   scaledSize.height);
+    }
+    else
+    {
+        result = self.bounds;
     }
     
     //===
