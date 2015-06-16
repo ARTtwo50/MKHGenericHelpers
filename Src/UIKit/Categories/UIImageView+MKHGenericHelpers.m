@@ -10,26 +10,7 @@
 
 @implementation UIImageView (MKHGenericHelpers)
 
-- (CGFloat)aspectFitImageScale
-{
-    CGFloat result = 0.0;
-    
-    //===
-    
-    if (self.image)
-    {
-        CGSize imageSize = self.image.size;
-        
-        result = fminf(self.bounds.size.width / imageSize.width,
-                       self.bounds.size.height / imageSize.height);
-    }
-    
-    //===
-    
-    return result;
-}
-
-- (CGRect)aspectFitImageFrame
+- (CGRect)aspectFillImageFrame
 {
     // http://stackoverflow.com/questions/4711615/how-to-get-the-displayed-image-frame-from-uiimageview
     
@@ -40,7 +21,7 @@
     //===
     
     if (self.image &&
-        (self.contentMode == UIViewContentModeScaleAspectFit))
+        (self.contentMode == UIViewContentModeScaleAspectFill))
     {
         CGSize selfSize = self.bounds.size;
         CGSize imageSize = self.image.size;
