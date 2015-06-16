@@ -43,13 +43,12 @@
     {
         CGSize imageSize = self.image.size;
         
-        CGFloat imageScale =
-        fminf(self.bounds.size.width / imageSize.width,
-              self.bounds.size.height / imageSize.height);
+        CGFloat imageScaleX = self.bounds.size.width / imageSize.width;
+        CGFloat imageScaleY = self.bounds.size.height / imageSize.height;
         
         CGSize scaledImageSize =
-        CGSizeMake(imageSize.width * imageScale,
-                   imageSize.height * imageScale);
+        CGSizeMake(imageSize.width * imageScaleX,
+                   imageSize.height * imageScaleY);
         
         result =
         CGRectMake(0.5f * (self.bounds.size.width - scaledImageSize.width),
