@@ -526,7 +526,7 @@ UIViewAnimationOptions defaultAnimationOptions = UIViewAnimationOptionCurveEaseI
 {
     return
     [[NSBundle mainBundle]
-     loadNibNamed:nibName owner:owner options:options].lastObject;
+     loadNibNamed:nibName owner:owner options:options].firstObject;
 }
 
 #pragma mark - Other
