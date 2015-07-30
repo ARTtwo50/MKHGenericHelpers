@@ -15,10 +15,6 @@
 
 //===
 
-//static const void *MKHGHUISVPreviousHorizontalPageNumberKey = &MKHGHUISVPreviousHorizontalPageNumberKey;
-static const void *MKHGHUISVHorizontalPageNumberKey = &MKHGHUISVHorizontalPageNumberKey;
-//static const void *MKHGHUISVPreviousVerticalPageNumberKey = &MKHGHUISVPreviousVerticalPageNumberKey;
-static const void *MKHGHUISVVerticalPageNumberKey = &MKHGHUISVVerticalPageNumberKey;
 static const void *MKHGHUISVOnDidChangeHorizontalPageKey = &MKHGHUISVOnDidChangeHorizontalPageKey;
 static const void *MKHGHUISVOnDidChangeVerticalPageKey = &MKHGHUISVOnDidChangeVerticalPageKey;
 
@@ -27,130 +23,6 @@ static const void *MKHGHUISVOnDidChangeVerticalPageKey = &MKHGHUISVOnDidChangeVe
 @implementation UIScrollView (MKHGenericHelpers)
 
 #pragma mark - Property accessors
-
-- (NSInteger)horizontalPageNumber
-{
-    NSInteger result = -1;
-    
-    //===
-    
-    NSNumber *storeValue =
-    ((NSNumber *)
-     objc_getAssociatedObject(self,
-                              MKHGHUISVHorizontalPageNumberKey));
-    
-    if (storeValue)
-    {
-        result = storeValue.integerValue;
-    }
-    
-    //===
-    
-    return result;
-}
-
-- (void)setHorizontalPageNumber:(NSInteger)newValue
-{
-    NSInteger previousValue = self.horizontalPageNumber;
-    
-    //===
-    
-    if (previousValue != newValue)
-    {
-        objc_setAssociatedObject(self,
-                                 MKHGHUISVHorizontalPageNumberKey,
-                                 [NSNumber numberWithInteger:newValue],
-                                 OBJC_ASSOCIATION_RETAIN);
-        
-        //===
-        
-        if (self.onDidChangeHorizontalPage)
-        {
-            self.onDidChangeHorizontalPage(self, previousValue, newValue);
-        }
-    }
-}
-
-//===
-
-- (NSInteger)verticalPageNumber
-{
-    NSInteger result = -1;
-    
-    //===
-    
-    NSNumber *storeValue =
-    ((NSNumber *)
-     objc_getAssociatedObject(self,
-                              MKHGHUISVVerticalPageNumberKey));
-    
-    if (storeValue)
-    {
-        result = storeValue.integerValue;
-    }
-    
-    //===
-    
-    return result;
-}
-
-- (void)setVerticalPageNumber:(NSInteger)newValue
-{
-    NSInteger previousValue = self.verticalPageNumber;
-    
-    //===
-    
-    if (previousValue != newValue)
-    {
-        objc_setAssociatedObject(self,
-                                 MKHGHUISVVerticalPageNumberKey,
-                                 [NSNumber numberWithInteger:newValue],
-                                 OBJC_ASSOCIATION_RETAIN);
-        
-        //===
-        
-        if (self.onDidChangeVerticalPage)
-        {
-            self.onDidChangeVerticalPage(self, previousValue, newValue);
-        }
-    }
-}
-
-//===
-
-- (MKHGHUISVOnDidChangeHorizontalPage)onDidChangeHorizontalPage
-{
-    return
-    objc_getAssociatedObject(self,
-                             MKHGHUISVOnDidChangeHorizontalPageKey);
-}
-
-- (void)setOnDidChangeHorizontalPage:(MKHGHUISVOnDidChangeHorizontalPage)handler
-{
-    objc_setAssociatedObject(self,
-                             MKHGHUISVOnDidChangeHorizontalPageKey,
-                             handler,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
-}
-
-//===
-
-- (MKHGHUISVOnDidChangeVerticalPage)onDidChangeVerticalPage
-{
-    return
-    objc_getAssociatedObject(self,
-                             MKHGHUISVOnDidChangeVerticalPageKey);
-}
-
-- (void)setOnDidChangeVerticalPage:(MKHGHUISVOnDidChangeVerticalPage)handler
-{
-    objc_setAssociatedObject(self,
-                             MKHGHUISVOnDidChangeVerticalPageKey,
-                             handler,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
-}
-
-//===
 
 - (BOOL)isBouncing
 {
@@ -290,34 +162,68 @@ static const void *MKHGHUISVOnDidChangeVerticalPageKey = &MKHGHUISVOnDidChangeVe
     [self setContentOffset:CGPointZero animated:animated];
 }
 
-- (void)updatePageNumbers
+#pragma mark - Page number
+
+- (NSUInteger)pageNumberVertical
 {
-    if (!self.isDecelerating && !self.isDragging)
+    NSUInteger result = 0;
+    
+    //===
+    
+    if (!CGSizeEqualToSize(self.contentSize, CGSizeZero))
     {
-        // can update
+        CGFloat currentOffset = self.contentOffset.y;
+        CGFloat pageSize = self.bounds.size.height;
         
-        NSInteger pageNumber =
-        (NSInteger)(floor(self.contentOffset.x/self.frame.size.width));
+        // http://stackoverflow.com/a/11337943
+        // http://stackoverflow.com/a/11339799
         
-        if (pageNumber < 0)
-        {
-            pageNumber = 0;
-        }
-        
-        self.horizontalPageNumber = pageNumber;
-        
-        //===
-        
-        pageNumber =
-        (NSInteger)(floor(self.contentOffset.y/self.frame.size.height));
-        
-        if (pageNumber < 0)
-        {
-            pageNumber = 0;
-        }
-        
-        self.verticalPageNumber = pageNumber;
+        result = (int)ABS(currentOffset) % (int)pageSize;
     }
+    
+    //===
+    
+    return result;
+}
+
+- (NSUInteger)pageNumberHorizontal
+{
+    NSUInteger result = 0;
+    
+    //===
+    
+    if (!CGSizeEqualToSize(self.contentSize, CGSizeZero))
+    {
+        CGFloat currentOffset = self.contentOffset.x;
+        CGFloat pageSize = self.bounds.size.width;
+        
+        // http://stackoverflow.com/a/11337943
+        // http://stackoverflow.com/a/11339799
+        
+        result = (int)ABS(currentOffset) % (int)pageSize;
+    }
+    
+    //===
+    
+    return result;
+}
+
+- (void)setPageNumberVertical:(NSUInteger)pageNumber animated:(BOOL)animated
+{
+    CGFloat pageSize = self.bounds.size.height;
+    
+    [self
+     setContentOffset:CGPointMake(self.contentOffset.x, pageNumber * pageSize)
+     animated:animated];
+}
+
+- (void)setPageNumberHorizontal:(NSUInteger)pageNumber animated:(BOOL)animated
+{
+    CGFloat pageSize = self.bounds.size.width;
+    
+    [self
+     setContentOffset:CGPointMake(pageNumber * pageSize, self.contentOffset.y)
+     animated:animated];
 }
 
 @end
