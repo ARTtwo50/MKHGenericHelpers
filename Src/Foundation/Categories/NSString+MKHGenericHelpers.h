@@ -23,4 +23,7 @@
 + (NSString*)base64forData:(NSData*)theData;
 - (NSString*)encodeBase64;
 
+- (NSURL *)URL;
+- (NSURL *)URLRelativeToURL:(NSURL *)baseURL;
+
 @end

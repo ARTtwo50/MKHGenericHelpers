@@ -213,4 +213,14 @@
             [self dataUsingEncoding:NSUTF8StringEncoding]];
 }
 
+- (NSURL *)URL
+{
+    return [NSURL URLWithString:self];
+}
+
+- (NSURL *)URLRelativeToURL:(NSURL *)baseURL
+{
+    return [NSURL URLWithString:self relativeToURL:baseURL];
+}
+
 @end
