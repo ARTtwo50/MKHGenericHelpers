@@ -21,12 +21,6 @@ typedef void (^MKHGHUISVOnDidChangeVerticalPage)(UIScrollView* scrollView,
 
 @interface UIScrollView (MKHGenericHelpers)
 
-@property (readonly) NSInteger horizontalPageNumber;
-@property (readonly) NSInteger verticalPageNumber;
-
-@property (copy, nonatomic) MKHGHUISVOnDidChangeHorizontalPage onDidChangeHorizontalPage;
-@property (copy, nonatomic) MKHGHUISVOnDidChangeVerticalPage onDidChangeVerticalPage;
-
 @property (readonly) BOOL isBouncing;
 @property (readonly) BOOL isBouncingHorizontally;
 @property (readonly) BOOL isBouncingLeftEdge;
@@ -40,10 +34,12 @@ typedef void (^MKHGHUISVOnDidChangeVerticalPage)(UIScrollView* scrollView,
 - (void)resetContentOffset;
 - (void)resetContentOffsetAnimated:(BOOL)animated;
 
-- (void)updatePageNumbers;
+//=== page number
 
-// for Xcode autocomplete support:
-- (void)setOnDidChangeHorizontalPage:(MKHGHUISVOnDidChangeHorizontalPage)onDidChangeHorizontalPage;
-- (void)setOnDidChangeVerticalPage:(MKHGHUISVOnDidChangeVerticalPage)onDidChangeVerticalPage;
+- (NSUInteger)pageNumberVertical;
+- (NSUInteger)pageNumberHorizontal;
+
+- (void)setPageNumberVertical:(NSUInteger)pageNumber animated:(BOOL)animated;
+- (void)setPageNumberHorizontal:(NSUInteger)pageNumber animated:(BOOL)animated;
 
 @end
