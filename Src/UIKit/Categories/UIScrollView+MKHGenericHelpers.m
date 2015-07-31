@@ -211,19 +211,41 @@ static const void *MKHGHUISVOnDidChangeVerticalPageKey = &MKHGHUISVOnDidChangeVe
 - (void)setPageNumberVertical:(NSUInteger)pageNumber animated:(BOOL)animated
 {
     CGFloat pageSize = self.bounds.size.height;
+    CGPoint targetOffset = CGPointMake(self.contentOffset.x, pageNumber * pageSize);
     
-    [self
-     setContentOffset:CGPointMake(self.contentOffset.x, pageNumber * pageSize)
-     animated:animated];
+    if (animated)
+    {
+        [UIView
+         animateWithDuration:defaultAnimationDuration
+         animations:^{
+             
+             self.contentOffset = targetOffset;
+         }];
+    }
+    else
+    {
+        self.contentOffset = targetOffset;
+    }
 }
 
 - (void)setPageNumberHorizontal:(NSUInteger)pageNumber animated:(BOOL)animated
 {
     CGFloat pageSize = self.bounds.size.width;
+    CGPoint targetOffset = CGPointMake(pageNumber * pageSize, self.contentOffset.y);
     
-    [self
-     setContentOffset:CGPointMake(pageNumber * pageSize, self.contentOffset.y)
-     animated:animated];
+    if (animated)
+    {
+        [UIView
+         animateWithDuration:defaultAnimationDuration
+         animations:^{
+             
+             self.contentOffset = targetOffset;
+         }];
+    }
+    else
+    {
+        self.contentOffset = targetOffset;
+    }
 }
 
 @end
