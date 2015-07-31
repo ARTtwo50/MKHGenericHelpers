@@ -200,7 +200,7 @@ static const void *MKHGHUISVOnDidChangeVerticalPageKey = &MKHGHUISVOnDidChangeVe
         // http://stackoverflow.com/a/11337943
         // http://stackoverflow.com/a/11339799
         
-        result = (int)ABS(currentOffset) % (int)pageSize;
+        result = (NSUInteger)(ABS(currentOffset) / pageSize);
     }
     
     //===
